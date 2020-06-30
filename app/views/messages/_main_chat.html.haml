@@ -1,0 +1,31 @@
+.main-chat
+  .group-info
+    .group-info__left-box
+      %h.group-info__left-box__current-group
+        test
+      %ul.group-info__left-box__member-list
+        Member: 
+        %li.group-info__left-box__member-list__member
+          masa
+    .group-info__edit-btn
+      =link_to "#" do
+        Edit
+  .message-list
+    .messages
+      .message
+        %ul.message__upper-info
+          masa
+          %li.message__upper-info__date
+            2020/6/29(Mon) 19:00:00
+        %p.message__text
+          こんばんは！
+  .message-form
+    .new-message
+      .input-box
+        .input-box__text
+          type a message
+        %label{class: "input-box__image"}
+          =icon("fas", "image")
+          %input{class: "input-box__image__file", type: "file"}
+      .send-btn
+        Send
