@@ -113,16 +113,16 @@
           color: #333333;
           font-size: 16px;
           font-weight: bold;
-          li{
+          &__date{
             color: #999999;
             font-size: 12px;
             padding-left: 10px;
             font-weight: normal;
           }
-          &__text{
-            color: #434a54;
-            font-size: 14px;
-          }
+        }
+        &__text{
+          color: #434a54;
+          font-size: 14px;
         }
       }
     }
@@ -131,7 +131,7 @@
     height: 90px;
     padding: 20px 40px;
     background-color: #d2d2d2;
-    .new-message{
+    .new_message {
       display: flex;
       .input-box{
         background-color: white;

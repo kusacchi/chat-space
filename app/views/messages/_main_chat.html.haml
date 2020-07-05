@@ -2,30 +2,22 @@
   .group-info
     .group-info__left-box
       %h.group-info__left-box__current-group
-        test
+        =@group.name
       %ul.group-info__left-box__member-list
         Member: 
         %li.group-info__left-box__member-list__member
-          masa
+          - @group.users.each do |user|
+            =user.name
     .group-info__edit-btn
-      =link_to "#" do
+      =link_to edit_group_path(@group) do
         Edit
   .message-list
-    .messages
-      .message
-        %ul.message__upper-info
-          masa
-          %li.message__upper-info__date
-            2020/6/29(Mon) 19:00:00
-        %p.message__text
-          こんばんは！
+    =render @messages
   .message-form
-    .new-message
+    = form_for [@group, @message]  do |f|
       .input-box
-        .input-box__text
-          type a message
-        %label{class: "input-box__image"}
-          =icon("fas", "image")
-          %input{class: "input-box__image__file", type: "file"}
-      .send-btn
-        Send
+        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'send-btn'
