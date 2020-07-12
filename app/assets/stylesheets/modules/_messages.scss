@@ -98,13 +98,11 @@
       }
     }
   }
-  .message-list{
-    height: calc(100vh - 100px - 90px);
-    background-color: #fafafa;
     .messages{
       height: calc(100vh - 190px);
       padding: 46px 40px;
       background-color: #fafafa;
+      overflow: scroll;
       .message{
         padding-bottom: 40px;
         &__upper-info{
@@ -126,7 +124,7 @@
         }
       }
     }
-  }
+
   .message-form{
     height: 90px;
     padding: 20px 40px;
@@ -138,10 +136,14 @@
         width: 100%;
         position: relative;
         display: flex;
+        .field_with_errors{
+          width: 100%;
+          padding-right: 40px;
+        }
         &__text{
           height: 50px;
           width: 100%;
-          padding: 10px 40px 10px 10px;
+          padding: 10px 10px 10px 10px;
           color: #434a54;
           border-style: none;
         }
