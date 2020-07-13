@@ -6,8 +6,8 @@ class Api::MessagesController < ApplicationController
     @messages = group.messages.includes(:user).where("id > ?", last_message_id)
 
     respond_to do |format|
-            format.html
-            format.json
+      format.html
+      format.json
     end
   end
 
